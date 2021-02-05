@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.MenuButton?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.ToolBar?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="768.0" prefWidth="1366.0" style="-fx-background-color: ALICEBLUE;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GroupAssignment.AdminEditGuestsController">
+   <children>
+      <Pane fx:id="pane" layoutX="189.0" layoutY="210.0" prefHeight="417.0" prefWidth="1177.0" style="-fx-background-color: #20B2AA; -fx-border-color: #008080;" />
+      <ToolBar fx:id="mainTool" prefHeight="40.0" prefWidth="1366.0">
+         <items>
+            <Button fx:id="buttonLogOut" mnemonicParsing="false" onAction="#handleLogOutButton" text="Log Out" />
+         </items>
+      </ToolBar>
+      <AnchorPane fx:id="secondAnchor" layoutY="40.0" prefHeight="728.0" prefWidth="250.0" style="-fx-background-color: #B0E0E6; -fx-border-color: #00CED1;">
+         <children>
+            <ImageView fx:id="eventifyLogo1" fitHeight="149.0" fitWidth="202.0" layoutX="49.0" layoutY="3.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@Images/EventifyLogoNew.png" />
+               </image>
+            </ImageView>
+            <Button fx:id="buttonMyEvents" layoutX="45.0" layoutY="350.0" mnemonicParsing="false" onAction="#switchToAdminMyEvents" prefHeight="59.0" prefWidth="167.0" text="    My Events">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Button>
+            <Button fx:id="buttonHome" layoutX="45.0" layoutY="220.0" mnemonicParsing="false" onAction="#switchToAdminHome" prefHeight="59.0" prefWidth="167.0" text="     Home       ">
+               <font>
+                  <Font size="14.0" />
+               </font>
+               <graphic>
+                  <ImageView fx:id="imageHome" fitHeight="50.0" fitWidth="50.0" pickOnBounds="true">
+                     <image>
+                        <Image url="@Images/home.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
+            <Button fx:id="buttonAbousUs" layoutX="45.0" layoutY="480.0" mnemonicParsing="false" onAction="#switchToAboutUs" prefHeight="59.0" prefWidth="167.0" text="    About Us">
+               <font>
+                  <Font size="14.0" />
+               </font>
+               <graphic>
+                  <ImageView fx:id="imageAboutUs" fitHeight="50.0" fitWidth="50.0" pickOnBounds="true">
+                     <image>
+                        <Image url="@Images/heart.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
+            <Button fx:id="buttonHelp" layoutX="45.0" layoutY="610.0" mnemonicParsing="false" onAction="#switchToHelp" prefHeight="59.0" prefWidth="167.0" text="        Help">
+               <font>
+                  <Font size="14.0" />
+               </font>
+               <graphic>
+                  <ImageView fx:id="imageHelp" fitHeight="50.0" fitWidth="50.0" pickOnBounds="true">
+                     <image>
+                        <Image url="@Images/help.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
+            <ImageView fx:id="imageMyEvents" fitHeight="60.0" fitWidth="60.0" layoutX="45.0" layoutY="350.0" pickOnBounds="true">
+               <image>
+                  <Image url="@Images/events.png" />
+               </image>
+            </ImageView>
+            <Label fx:id="labelMyGuests" layoutX="82.0" layoutY="142.0" prefHeight="51.0" prefWidth="127.0" text="My Guests" underline="true">
+               <font>
+                  <Font name="System Bold" size="24.0" />
+               </font>
+            </Label>
+            <ImageView fx:id="imageGuests" fitHeight="50.0" fitWidth="50.0" layoutX="24.0" layoutY="143.0" pickOnBounds="true">
+               <image>
+                  <Image url="@Images/profile.png" />
+               </image>
+            </ImageView>
+         </children>
+      </AnchorPane>
+      <TableView fx:id="tableAdminCurrentGuests" editable="true" layoutX="310.0" layoutY="220.0" prefHeight="521.0" prefWidth="1000.0" style="-fx-background-color: #B0E0E6;">
+         <columns>
+            <TableColumn fx:id="colGuestFirstName" onEditCommit="#changeFirstNameCellEvent" prefWidth="250.0" text="Guest First Name" />
+            <TableColumn fx:id="colGuestLastName" onEditCommit="#changeLastNameCellEvent" prefWidth="250.0" text="Guest Last Name" />
+            <TableColumn fx:id="colGuestCode" editable="false" prefWidth="250.0" sortable="false" text="Guest Code" />
+            <TableColumn fx:id="colGuestEmail" onEditCommit="#changeGuestEmailCellEvent" prefWidth="250.0" sortable="false" text="Guest Email" />
+            <TableColumn fx:id="colAdminID" editable="false" prefWidth="334.0" sortable="false" text="Admin ID" visible="false" />
+            <TableColumn fx:id="colGuestID" editable="false" prefWidth="334.0" sortable="false" text="Guest ID" visible="false" />
+         </columns>
+      </TableView>
+      <ToolBar fx:id="toolNavBar" layoutX="250.0" layoutY="40.0" prefHeight="40.0" prefWidth="1116.0" style="-fx-background-color: #008080;">
+         <items>
+            <MenuButton fx:id="menuGuests" mnemonicParsing="false" text="Edit Current Guests">
+               <items>
+                  <MenuItem fx:id="menuViewCurrentGuests" mnemonicParsing="false" onAction="#switchToAdminMyGuests" text="View Current Guests" />
+                  <MenuItem fx:id="menuAddGuests" mnemonicParsing="false" onAction="#switchToAdminAddGuests" text="Add Guests" />
+               </items>
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </MenuButton>
+         </items>
+      </ToolBar>
+      <Label layoutX="704.0" layoutY="100.0" text="Edit Your Current Guests" underline="true" wrapText="true">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font>
+      </Label>
+      <Button fx:id="buttonDeleteGuest" layoutX="742.0" layoutY="167.0" mnemonicParsing="false" onAction="#handleDeleteGuestButton" text="Delete Selected Guest" />
+   </children>
+</AnchorPane>

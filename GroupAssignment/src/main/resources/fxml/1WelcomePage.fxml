@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ToolBar?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.TilePane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="mainAnchor" prefHeight="768.0" prefWidth="1366.0" style="-fx-background-color: ALICEBLUE;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GroupAssignment.WelcomePageController">
+   <children>
+      <TilePane />
+      <Pane fx:id="secondPane" layoutX="383.0" prefHeight="768.0" prefWidth="600.0" style="-fx-background-color: #B0E0E6; -fx-border-color: #00CED1;">
+         <children>
+            <Pane fx:id="thirdPane" layoutX="70.0" layoutY="324.0" prefHeight="444.0" prefWidth="460.0" style="-fx-background-color: #20B2AA; -fx-border-color: #008080;">
+               <children>
+                  <Button fx:id="adminLoginButton" layoutX="166.0" layoutY="100.0" mnemonicParsing="false" onAction="#switchToAdminLogin" style="-fx-border-color: #008080;" text="Admin Login">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="guestLoginButton" layoutX="170.0" layoutY="247.0" mnemonicParsing="false" onAction="#switchToGuestLogin" style="-fx-border-color: #008080;" text="Guest Login">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Button>
+               </children>
+            </Pane>
+            <ImageView fx:id="eventifyLogo1" fitHeight="276.0" fitWidth="399.0" layoutX="174.0" layoutY="23.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@Images/EventifyLogoNew.png" />
+               </image>
+            </ImageView>
+            <Label fx:id="labelSlogan" layoutX="214.0" layoutY="275.0" text="The better way to plan your events">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Label>
+         </children>
+      </Pane>
+      <ToolBar fx:id="mainTool" prefHeight="40.0" prefWidth="1366.0" />
+   </children>
+</AnchorPane>

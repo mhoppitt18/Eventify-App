@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToolBar?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="mainAnchor" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="768.0" prefWidth="1366.0" style="-fx-background-color: #F0F8FF;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GroupAssignment.GuestLoginController">
+    <children>
+        <Pane fx:id="pane" layoutX="383.0" prefHeight="768.0" prefWidth="600.0" style="-fx-background-color: #B0E0E6; -fx-border-color: #00CED1;">
+            <children>
+            <Pane fx:id="thirdPane" layoutX="70.0" layoutY="320.0" prefHeight="448.0" prefWidth="460.0" style="-fx-background-color: #20B2AA; -fx-border-color: #008080;">
+               <children>
+                      <Label fx:id="labelGuestID" layoutX="177.0" layoutY="89.0" prefHeight="27.0" prefWidth="113.0" text="Guset Access Code:" />
+                      <Label id="loginStatus " fx:id="loginStatus" layoutX="77.0" layoutY="344.0" prefHeight="17.0" prefWidth="197.0" textFill="#f70404">
+                     <font>
+                        <Font name="System Bold" size="16.0" />
+                     </font>
+                  </Label>
+                      <TextField fx:id="textGuestID" layoutX="159.0" layoutY="126.0" />
+                      <Button fx:id="buttonLogin" layoutX="193.0" layoutY="297.0" mnemonicParsing="false" onAction="#handleGuestLoginButton" text="Log In">
+                          <font>
+                              <Font size="18.0" />
+                          </font>
+                      </Button>
+               </children>
+            </Pane>
+                <ImageView fx:id="eventifyLogo" fitHeight="276.0" fitWidth="399.0" layoutX="174.0" layoutY="23.0" pickOnBounds="true" preserveRatio="true">
+                    <image>
+                        <Image url="@Images/EventifyLogoNew.png" />
+                    </image>
+                </ImageView>
+                <Label fx:id="labelSlogan" layoutX="214.0" layoutY="275.0" text="The better way to plan your events">
+                    <font>
+                        <Font name="System Bold" size="12.0" />
+                    </font>
+                </Label>
+            </children>
+        </Pane>
+        <ToolBar fx:id="mainTool" prefHeight="40.0" prefWidth="1366.0">
+            <items>
+                <Button fx:id="buttonBack" mnemonicParsing="false" onAction="#proceedToWelcomePage" text="Back" />
+            </items>
+        </ToolBar>
+    </children>
+</AnchorPane>
